@@ -8,16 +8,16 @@ export function ProjectSection() {
           <h2>What I’ve Built</h2>
         </div>
 
-        <div className=" mt-4 ">
+        <div className=" mt-4 flex flex-col gap-3 ">
           {projects.map((project, index) => (
             <div
               key={index}
-              className=" flex flex-row mb-5  border-2 border-black "
+              className=" flex flex-row justify-center items-center gap-3  border-2 border-black "
             >
-              <div>{project.name}</div>
-              <div className="font-bold">
+              <div className="">{project.name}</div>
+              <div className="font-bold text-left grow">
                 <p>{project.description}</p>
-                <div>
+                <div className="mt-4 md:mt-2">
                   {project.techStack.map((tech, i) => (
                     <span key={i}> {tech}</span>
                   ))}

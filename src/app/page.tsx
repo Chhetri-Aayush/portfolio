@@ -1,12 +1,15 @@
 import { ProjectSection } from "./_components/projectSection";
+import { ToggleTheme } from "./_components/themeToggle";
+import { FooterSection } from "./_components/footerSection";
 
 export default function Home() {
   return (
     <>
-      <div className="border-black border-2 flex justify-between">
+      <div className="mt-7 border-black border-2 flex justify-between">
         <h1 className="text-3xl">Welcome</h1>
         <div>
-          <button>light</button>
+          <ToggleTheme />
+          {/* <button>light</button> */}
         </div>
       </div>
 
@@ -36,6 +39,10 @@ export default function Home() {
 
       <section>
         <ProjectSection />
+      </section>
+      <div className="mt-3 w-full h-0.5 bg-black"></div>
+      <section>
+        <FooterSection />
       </section>
     </>
   );
