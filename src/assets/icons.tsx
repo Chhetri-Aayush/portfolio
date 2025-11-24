@@ -23,7 +23,8 @@ export const LightIcon = (props: LogoIconProps) => (
     {...props}
   >
     <path
-      stroke="#000"
+      stroke="#fce205"
+      // stroke="#000"
       strokeLinecap="round"
       strokeLinejoin="round"
       strokeWidth={2}

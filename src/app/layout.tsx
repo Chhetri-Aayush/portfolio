@@ -1,14 +1,16 @@
 import type { Metadata } from "next";
-import { Geist, Geist_Mono } from "next/font/google";
+import { Titillium_Web, STIX_Two_Text } from "next/font/google";
 import "./globals.css";
 
-const geistSans = Geist({
-  variable: "--font-geist-sans",
+const titilliumWeb = Titillium_Web({
+  variable: "--font-titillium-web",
+  weight: "300",
   subsets: ["latin"],
 });
 
-const geistMono = Geist_Mono({
-  variable: "--font-geist-mono",
+const stixTwoText = STIX_Two_Text({
+  variable: "--font-stix-two-text",
+  weight: "400",
   subsets: ["latin"],
 });
 
@@ -24,10 +26,8 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en" className="dark">
-      <body
-        className={`${geistSans.variable} ${geistMono.variable} antialiased`}
-      >
-        <div className="bg-background mx-auto max-w-2xl md:max-w-4xl border-black border-2 px-6">
+      <body className={`${stixTwoText.className}  antialiased`}>
+        <div className="bg-background mx-auto max-w-2xl md:max-w-3xl px-6">
           {children}
         </div>
       </body>

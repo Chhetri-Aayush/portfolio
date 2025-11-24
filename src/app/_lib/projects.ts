@@ -6,22 +6,22 @@ type Project = {
 
 export const projects: Project[] = [
   {
-    name: "typing test",
+    name: "Typing test",
     description:
       "Interactive typing speed test application with real-time statistics and performance tracking.",
     techStack: [
       "React,",
       "Typescript,",
       "Tailwind,",
-      "Zustand,",
+      // "Zustand,",
       "Bun,",
       "Hono,",
-      "Postgres.",
+      // "Postgres.",
     ],
   },
 
   {
-    name: "conect-core",
+    name: "Conect-core",
     description:
       "A fully featured social media backend built with secure authentication, user profiles, posts, comments, likes, and follow systems.",
     techStack: ["Node,", "Express,", "MongoDB,", "Multer."],

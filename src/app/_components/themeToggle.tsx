@@ -1,12 +1,17 @@
 "use client";
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import { DarkIcon, LightIcon } from "@/assets/icons";
 
 export function ToggleTheme() {
-  const [theme, setTheme] = useState<string | undefined>();
+  const [theme, setTheme] = useState<string>();
+
+  useEffect(() => {
+    const isDark = document.documentElement.classList.contains("dark");
+    setTheme(isDark ? "dark" : "light");
+  }, []);
 
   function handleTheme() {
-    const isDark = document.documentElement.classList.contains("dark");
+    const isDark = theme === "dark";
 
     if (isDark) {
       document.documentElement.classList.remove("dark");
@@ -16,17 +21,21 @@ export function ToggleTheme() {
       setTheme("dark");
     }
   }
+
+  if (!theme) return null; // prevent flashing
+
   return (
     <>
-      {theme !== "dark" ? (
-        <div onClick={handleTheme} className="cursor-pointer">
-          <LightIcon className="w-10 h-10 " color="yellow" />
-        </div>
-      ) : (
-        <div onClick={handleTheme} className="cursor-pointer">
+      <div
+        onClick={handleTheme}
+        className="cursor-pointer transition-transform duration-300 transform hover:rotate-45"
+      >
+        {theme === "dark" ? (
+          <LightIcon className="w-8 h-8" />
+        ) : (
           <DarkIcon className="w-7 h-7" />
-        </div>
-      )}
+        )}
+      </div>
     </>
   );
 }
